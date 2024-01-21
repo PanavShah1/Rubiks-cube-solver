@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Call Example</title>
+</head>
+<body>
+  <script>
+    const apiUrl = 'http://127.0.0.1:8000/cube-scramble/fdddurrbdfufbrfbflbrrdflubururddublulldllbdfflrurbubfl';
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Access the entire data object
+        console.log('API Response:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error.message);
+      });
+  </script>
+</body>
+</html>
